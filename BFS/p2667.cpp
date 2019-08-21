@@ -59,7 +59,7 @@ void init() {
 }
 
 int main(){
-    freopen("sample.txt", "r", stdin);
+    freopen("p2667_sample.txt", "r", stdin);
 
     init();
     scanf("%d", &N);
