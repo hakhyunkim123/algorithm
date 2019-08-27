@@ -45,6 +45,13 @@ bool insertion_sort(int* ary, const int size) {
     return true;
 }
 
+bool bubble_sort(int* ary, const int size) {
+    for(int i=0; i<size-1; i++) 
+        for(int j=1; j<size-i; j++)  // 배열의 마지막 부분부터 정렬되므로 size-i만큼 순회.
+            if(ary[j-1] > ary[j]) swap(ary[j-1], ary[j]);  
+    return true;
+}
+
 void self_test(int *sample, const int size) {
     time_t start, end;
     double time;
