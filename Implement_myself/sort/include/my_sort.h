@@ -5,3 +5,6 @@ void self_test(int *sample, const int size);
 bool selection_sort(int* ary, const int size);
 bool insertion_sort(int* ary, const int size);
 bool bubble_sort(int* ary, const int size);
+bool merge_sort(int* ary, const int size);
+void merge_sort_logic(int* ary, const int size, const int start, const int end);
+void merge(int* ary, const int size, const int start, int const mid, const int end);

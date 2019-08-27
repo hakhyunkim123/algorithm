@@ -52,6 +52,41 @@ bool bubble_sort(int* ary, const int size) {
     return true;
 }
 
+void merge(int* ary, const int start, const int mid, const int end) {
+    // set index //
+    int i = start, j = mid+1, idx = 0;
+    int ret[end - start + 1];
+
+    while(i<=mid && j<=end) {
+        if(ary[i] < ary[j]) ret[idx++] = ary[i++];
+        // >=가 하나이상 있어야 된다.
+        else if(ary[i] >= ary[j]) ret[idx++] = ary[j++];
+    }
+    // 남은 배열 처리
+    while(i <= mid) ret[idx++] = ary[i++];
+    while(j <= end) ret[idx++] = ary[j++];
+        
+    // copy to origin array
+    int copy_idx = 0;
+    for(int k=start; k<=end; k++) ary[k] = ret[copy_idx++];
+}
+
+void merge_sort_logic(int* ary, const int start, const int end) {
+    if(start < end) {
+        int mid = (start + end) / 2;
+        // divide //
+        merge_sort_logic(ary, start, mid);
+        merge_sort_logic(ary, mid+1, end);
+        // conquer //
+        merge(ary, start, mid, end);
+    }
+}
+
+bool merge_sort(int* ary, const int size) {
+    merge_sort_logic(ary, 0, size-1);
+    return true;
+}
+
 void self_test(int *sample, const int size) {
     time_t start, end;
     double time;
@@ -66,6 +101,7 @@ void self_test(int *sample, const int size) {
     time = (double)(end - start)/1000;
     printf("time: %d\n", time);
     print_ary(ary, size);
+    printf("\n");
 
     printf("Insertion sort sort test\n");
     printf("Array size: %d\n", size);
@@ -76,4 +112,27 @@ void self_test(int *sample, const int size) {
     time = (double)(end - start)/1000;
     printf("time: %d\n", time);
     print_ary(ary, size);
+    printf("\n");
+
+    printf("Bubble sort test\n");
+    printf("Array size: %d\n", size);
+    copy_ary(ary, sample, size);
+    start = clock();
+    bubble_sort(ary, size);
+    end = clock();
+    time = (double)(end - start)/1000;
+    printf("time: %d\n", time);
+    print_ary(ary, size);
+    printf("\n");
+
+    printf("Merge sort test\n");
+    printf("Array size: %d\n", size);
+    copy_ary(ary, sample, size);
+    start = clock();
+    merge_sort(ary, size);
+    end = clock();
+    time = (double)(end - start)/1000;
+    printf("time: %d\n", time);
+    print_ary(ary, size);
+    printf("\n");
 }

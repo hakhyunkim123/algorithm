@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    int ary[10];
+    /*int ary[10];
     sampling(10);
 
     sample_reading(ary, 10);
@@ -21,7 +21,15 @@ int main() {
         for(int i=0; i<10; i++) res_file << res[i] << " ";
     else 
         cout << "res file is not open." << endl;
-    res_file.close();
+    res_file.close();*/
+
+
+    int sample[10];
+    sampling(10);
+
+    sample_reading(sample, 10);
+    print_ary(sample, 10);
+    self_test(sample, 10);
 
     return 0;
 }
