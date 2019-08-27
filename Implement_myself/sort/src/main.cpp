@@ -24,12 +24,12 @@ int main() {
     res_file.close();*/
 
 
-    int sample[10];
-    sampling(10);
+    const int sample_size = 50000;
+    int sample[sample_size];
+    sampling(sample_size);
 
-    sample_reading(sample, 10);
-    print_ary(sample, 10);
-    self_test(sample, 10);
+    sample_reading(sample, sample_size);
+    self_test(sample, sample_size);
 
     return 0;
 }

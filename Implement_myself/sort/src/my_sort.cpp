@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <ctime>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -88,10 +89,43 @@ bool merge_sort(int* ary, const int size) {
     return true;
 }
 
-void self_test(int *sample, const int size) {
+void quick_sort_logic(int* ary, const int start, const int end) {
+    if(start >= end) return;
+    int pivot = ary[(start + end) / 2];
+    int left = start, right = end;
+
+    while(left <= right) {
+        while(pivot > ary[left]) left++;
+        while(pivot < ary[right]) right--;
+        if(left<=right) {
+            swap(ary[left], ary[right]);
+            left++; right--;
+        }
+    }
+
+    // while문을 빠져나오면 left가 right보다 1크다 그러므로
+    // start ~ right, left ~ end로 나뉘어진다.
+    quick_sort_logic(ary, start, right);
+    quick_sort_logic(ary, left, end);
+}
+
+bool quick_sort(int* ary, const int size) {
+    quick_sort_logic(ary, 0, size-1);
+    return true;
+}
+
+/*
+void self_test2(int *sample, const int size) {
     time_t start, end;
     double time;
     int ary[size];
+
+    ofstream res_file("./result/result.txt");
+
+    if(!res_file.is_open()) {
+        printf("result file is not open.\n");
+        return;
+    }
 
     printf("Selection sort test\n");
     printf("Array size: %d\n", size);
@@ -151,4 +185,109 @@ void self_test(int *sample, const int size) {
     printf("time: %d\n", time);
     print_ary(ary, size);
     printf("\n");
+
+    printf("Quick sort test\n");
+    printf("Array size: %d\n", size);
+
+    copy_ary(ary, sample, size);
+
+    start = clock();
+    quick_sort(ary, size);
+    end = clock();
+
+    time = (double)(end - start)/1000;
+    
+    printf("time: %d\n", time);
+    print_ary(ary, size);
+    printf("\n");
+
+    ofstream res_file("./result/result.txt");
+    if(res_file.is_open()) 
+        for(int i=0; i<size; i++) res_file << ary[i] << " ";
+    else 
+        cout << "res file is not open." << endl;
+    res_file.close();
+}
+*/
+
+void self_test(int *sample, const int size) {
+    time_t start, end;
+    double time;
+    int ary[size];
+
+    printf("Selection sort test\n");
+    printf("Array size: %d\n", size);
+
+    copy_ary(ary, sample, size);
+
+    start = clock();
+    selection_sort(ary, size);
+    end = clock();
+    time = (double)(end - start)/1000;
+    printf("time: %d\n", time);
+    printf("\n");
+
+    printf("Insertion sort sort test\n");
+    printf("Array size: %d\n", size);
+
+    copy_ary(ary, sample, size);
+
+    start = clock();
+    insertion_sort(ary, size);
+    end = clock();
+
+    time = (double)(end - start)/1000;
+
+    printf("time: %d\n", time);
+    printf("\n");
+
+    printf("Bubble sort test\n");
+    printf("Array size: %d\n", size);
+
+    copy_ary(ary, sample, size);
+
+    start = clock();
+    bubble_sort(ary, size);
+    end = clock();
+
+    time = (double)(end - start)/1000;
+
+    printf("time: %d\n", time);
+    printf("\n");
+
+    printf("Merge sort test\n");
+    printf("Array size: %d\n", size);
+
+    copy_ary(ary, sample, size);
+
+    start = clock();
+    merge_sort(ary, size);
+    end = clock();
+
+    time = (double)(end - start)/1000;
+    
+    printf("time: %d\n", time);
+    printf("\n");
+
+    printf("Quick sort test\n");
+    printf("Array size: %d\n", size);
+
+    copy_ary(ary, sample, size);
+
+    start = clock();
+    quick_sort(ary, size);
+    end = clock();
+
+    time = (double)(end - start)/1000;
+    
+    printf("time: %d\n", time);
+    printf("\n");
+
+    ofstream res_file("./result/result.txt");
+    if(res_file.is_open()) 
+        for(int i=0; i<size; i++) res_file << ary[i] << " ";
+    else 
+        cout << "res file is not open." << endl;
+
+    res_file.close();
 }

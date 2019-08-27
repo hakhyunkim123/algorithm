@@ -40,7 +40,7 @@ bool sample_reading(int* ary, const int size) {
             file >> ary[idx];
             idx++;
         }
-        printf("[Array size: %d]sample reading success!\n", idx-1);
+        printf("[Array size: %d] Sample reading success!\n", idx-1);
     }
 
     file.close();
