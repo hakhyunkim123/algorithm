@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdio>
 #include <ctime>
+#include <string>
 
 using namespace std;
 
@@ -94,10 +95,13 @@ void self_test(int *sample, const int size) {
 
     printf("Selection sort test\n");
     printf("Array size: %d\n", size);
+
     copy_ary(ary, sample, size);
+
     start = clock();
     selection_sort(ary, size);
     end = clock();
+
     time = (double)(end - start)/1000;
     printf("time: %d\n", time);
     print_ary(ary, size);
@@ -105,33 +109,45 @@ void self_test(int *sample, const int size) {
 
     printf("Insertion sort sort test\n");
     printf("Array size: %d\n", size);
+
     copy_ary(ary, sample, size);
+
     start = clock();
     insertion_sort(ary, size);
     end = clock();
+
     time = (double)(end - start)/1000;
+
     printf("time: %d\n", time);
     print_ary(ary, size);
     printf("\n");
 
     printf("Bubble sort test\n");
     printf("Array size: %d\n", size);
+
     copy_ary(ary, sample, size);
+
     start = clock();
     bubble_sort(ary, size);
     end = clock();
+
     time = (double)(end - start)/1000;
+
     printf("time: %d\n", time);
     print_ary(ary, size);
     printf("\n");
 
     printf("Merge sort test\n");
     printf("Array size: %d\n", size);
+
     copy_ary(ary, sample, size);
+
     start = clock();
     merge_sort(ary, size);
     end = clock();
+
     time = (double)(end - start)/1000;
+    
     printf("time: %d\n", time);
     print_ary(ary, size);
     printf("\n");
