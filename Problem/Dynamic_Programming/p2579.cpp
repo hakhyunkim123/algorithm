@@ -11,7 +11,7 @@ int stairs[MAX];
 int ret[MAX][2];
 
 int main() {
-    //freopen("p2579_sample.txt", "r", stdin);
+    freopen("../Samples/p2579_sample.txt", "r", stdin);
     scanf("%d", &N);
     for(int i=1; i<=N; i++) scanf("%d", &stairs[i]);
     

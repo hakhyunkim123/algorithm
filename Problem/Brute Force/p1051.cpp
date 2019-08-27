@@ -24,7 +24,7 @@ int find_square(int x, int y, int max_length) {
 }
 
 int main() {
-    freopen("p1051_sample.txt", "r", stdin);
+    freopen("../Samples/p1051_sample.txt", "r", stdin);
 
     scanf("%d %d", &N, &M);
     for(int i=0; i<N; i++)

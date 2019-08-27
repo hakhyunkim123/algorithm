@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    //freopen("p10871_sample.txt", "r", stdin);
+    freopen("../Samples/p10871_sample.txt", "r", stdin);
 
     int N, X;
     scanf("%d %d", &N, &X);

@@ -44,7 +44,7 @@ void bfs(int x, int y, int height) {
 }
 
 int main() {
-    freopen("p2468_sample.txt", "r", stdin);
+    freopen("../Samples/p2468_sample.txt", "r", stdin);
     scanf("%d", &N);
 
     int max_height = 0, min_height = 101;
