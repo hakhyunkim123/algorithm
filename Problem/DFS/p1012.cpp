@@ -27,7 +27,7 @@ void dfs(int x, int y) {
 }
 
 int main() {
-    // freopen("p1012_sample.txt", "r", stdin);
+    freopen("../Samples/p1012_sample.txt", "r", stdin);
     // input //
     int T, K;
     scanf("%d", &T);

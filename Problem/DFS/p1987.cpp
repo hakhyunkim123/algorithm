@@ -32,7 +32,7 @@ void dfs(int x, int y, int depth) {
 }
 
 int main() {
-    //freopen("p1987_sample.txt", "r", stdin);
+    freopen("../Samples/p1987_sample.txt", "r", stdin);
     cin >> R >> C;
     for(int i=0; i<R; i++) 
         for(int j=0; j<C; j++)
