@@ -47,7 +47,7 @@ void simulation() {
 }
 
 int main() {
-    //freopen("p14503_sample.txt", "r", stdin);
+    //freopen("../Samples/p14503_sample.txt", "r", stdin);
 
     scanf("%d %d", &N, &M);
     scanf("%d %d %d", &r, &c, &d);
