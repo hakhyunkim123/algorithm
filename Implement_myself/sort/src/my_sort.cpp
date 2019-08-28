@@ -224,7 +224,7 @@ void self_test(int *sample, const int size) {
     selection_sort(ary, size);
     end = clock();
     time = (double)(end - start)/1000;
-    printf("time: %d\n", time);
+    printf("time: %f\n", time);
     printf("\n");
 
     printf("Insertion sort sort test\n");
@@ -238,7 +238,7 @@ void self_test(int *sample, const int size) {
 
     time = (double)(end - start)/1000;
 
-    printf("time: %d\n", time);
+    printf("time: %f\n", time);
     printf("\n");
 
     printf("Bubble sort test\n");
@@ -252,7 +252,7 @@ void self_test(int *sample, const int size) {
 
     time = (double)(end - start)/1000;
 
-    printf("time: %d\n", time);
+    printf("time: %f\n", time);
     printf("\n");
 
     printf("Merge sort test\n");
@@ -266,7 +266,7 @@ void self_test(int *sample, const int size) {
 
     time = (double)(end - start)/1000;
     
-    printf("time: %d\n", time);
+    printf("time: %f\n", time);
     printf("\n");
 
     printf("Quick sort test\n");
@@ -280,7 +280,7 @@ void self_test(int *sample, const int size) {
 
     time = (double)(end - start)/1000;
     
-    printf("time: %d\n", time);
+    printf("time: %f\n", time);
     printf("\n");
 
     ofstream res_file("./result/result.txt");
