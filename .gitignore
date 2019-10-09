@@ -2,5 +2,6 @@
 result.txt
 sample.txt
 *.exe
-Python/*
-Problem/Line/*
+Python
+Problem/Line
+Problem/NHN
