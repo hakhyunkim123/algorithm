@@ -14,6 +14,8 @@ void map_selfTest() {
     printf("%s count --> %d\n", "kim", m.count("kim"));
     printf("%s --> %d\n", "kim", m.find("kim")->second);
 
+    printf("%d\n", m.count("kim"));
+
     m.insert({"Lee", 50});
     for(auto it = m.begin(); it != m.end(); it++) {
         printf("key: %s, value: %d\n", it->first.c_str(), it->second);
@@ -41,7 +43,7 @@ void multiMap_selfTest() {
 }
 
 int main() {
-    multiMap_selfTest();
-    //map_selfTest();
+    //multiMap_selfTest();
+    map_selfTest();
     return 0;
 }

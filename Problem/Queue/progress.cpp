@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// https://programmers.co.kr/learn/courses/30/lessons/42586
+
 vector<int> solution(vector<int> progresses, vector<int> speeds) {
     deque<pair<int, int> > dq;
     vector<int> answer;

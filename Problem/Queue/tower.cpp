@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// https://programmers.co.kr/learn/courses/30/lessons/42588
+
 int get_send_top(const vector<int> heights, int index) {
     int ret = 0;
     int cur = heights[index];

@@ -4,6 +4,8 @@
 
 using namespace std;
 
+//https://programmers.co.kr/learn/courses/30/lessons/42842
+
 bool check(int brown, int x, int y) {
     if(y<3) return false;
     return brown == (x*2 + (y-2)*2);

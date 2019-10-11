@@ -6,6 +6,8 @@
 
 using namespace std;
 
+// https://programmers.co.kr/learn/courses/30/lessons/42839
+
 bool visited[10];
 bool number[10000000];
 string in_str = "011";

@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// https://programmers.co.kr/learn/courses/30/lessons/42841
+
 vector<string> num_list;
 bool visited[10];
 vector<string> ret;
